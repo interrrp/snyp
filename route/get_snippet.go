@@ -34,6 +34,7 @@ func handleGetSnippet(c echo.Context) error {
 
 	c.JSON(http.StatusOK, util.H{
 		"id":        s.ID,
+		"name":      s.Name,
 		"content":   s.Content,
 		"createdAt": s.CreatedAt,
 		"updatedAt": s.UpdatedAt,

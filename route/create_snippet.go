@@ -21,6 +21,7 @@ var CreateSnippet = Route{
 // createSnippetParams are the JSON body parameters
 // to the snippet creation route.
 type createSnippetParams struct {
+	Name    string `json:"name"`
 	Content string `json:"content"`
 }
 
@@ -30,6 +31,7 @@ func handleCreateSnippet(c echo.Context) error {
 	c.Bind(&params)
 
 	s := &db.Snippet{
+		Name:    params.Name,
 		Content: params.Content,
 	}
 
@@ -40,6 +42,7 @@ func handleCreateSnippet(c echo.Context) error {
 
 	c.JSON(http.StatusCreated, util.H{
 		"id":        s.ID,
+		"name":      s.Name,
 		"content":   s.Content,
 		"createdAt": s.CreatedAt,
 	})

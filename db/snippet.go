@@ -14,6 +14,9 @@ type Snippet struct {
 	// ID is the unique identifier of the snippet.
 	ID string
 
+	// Name is the name of the snippet.
+	Name string
+
 	// Content is the content of the snippet.
 	Content string
 }
