@@ -35,10 +35,10 @@ func handleCreateSnippet(c echo.Context) error {
 		)
 	}
 
-	if err := util.Validate(params); err != nil {
+	if err := util.Validate(params); err != "" {
 		return echo.NewHTTPError(
 			http.StatusBadRequest,
-			err.Error(),
+			err,
 		)
 	}
 
