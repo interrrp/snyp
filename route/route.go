@@ -6,7 +6,7 @@ import (
 )
 
 // Routes contains all routes.
-var Routes = []Route{Root, CreateSnippet, GetSnippet}
+var Routes = []Route{CreateSnippet, GetSnippet}
 
 // A Route is a single route on a server.
 type Route struct {

@@ -13,6 +13,9 @@ var validate = validator.New()
 // It returns a nice output.
 func Validate(v any) string {
 	err := validate.Struct(v)
+	if err == nil {
+		return ""
+	}
 
 	var msg string
 

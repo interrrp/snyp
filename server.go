@@ -19,6 +19,8 @@ func main() {
 	e.Use(middleware.Recover())
 	e.Use(middleware.CORS())
 
+	e.Static("/", "static")
+
 	for _, r := range route.Routes {
 		r.Register(e.Router())
 	}
