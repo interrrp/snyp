@@ -37,7 +37,6 @@ func handleGetSnippet(c echo.Context) error {
 		"name":      s.Name,
 		"content":   s.Content,
 		"createdAt": s.CreatedAt,
-		"updatedAt": s.UpdatedAt,
 	})
 
 	return nil
